@@ -12,30 +12,39 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="8713f9a3-8a63-46dc-a7dc-e638ee065267">
-      <console name="items" type="STANDARD" schema="mysql" session="Main" />
+    <connection id="cc4e175c-1229-4383-a8bb-a5d0b8e27172">
+      <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="8713f9a3-8a63-46dc-a7dc-e638ee065267" dataset="car_item.Cart_SEQ" active-filter-id="" />
-    <filter-actions connection-id="8713f9a3-8a63-46dc-a7dc-e638ee065267" dataset="car_item.cart_to_items" active-filter-id="" />
-    <filter-actions connection-id="8713f9a3-8a63-46dc-a7dc-e638ee065267" dataset="car_item.Cart" active-filter-id="54e878ec-4c5e-4a88-a6e3-d02fe3df9189">
-      <filter id="54e878ec-4c5e-4a88-a6e3-d02fe3df9189" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+    <filter-actions connection-id="cc4e175c-1229-4383-a8bb-a5d0b8e27172" dataset="cart_item.Cart" active-filter-id="EMPTY_FILTER">
+      <filter id="ee133d9a-5b1a-4089-b6f2-49788d15fd72" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="1" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="8713f9a3-8a63-46dc-a7dc-e638ee065267" dataset="car_item.Item_SEQ" active-filter-id="" />
-    <filter-actions connection-id="8713f9a3-8a63-46dc-a7dc-e638ee065267" dataset="car_item.Item" active-filter-id="ad7b7ce5-05e0-4a47-b3c3-0cd43e99664f">
-      <filter id="ad7b7ce5-05e0-4a47-b3c3-0cd43e99664f" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="id" operator="=" value="1" active="true" />
+    <filter-actions connection-id="cc4e175c-1229-4383-a8bb-a5d0b8e27172" dataset="cart_item.Cart_SEQ" active-filter-id="" />
+    <filter-actions connection-id="cc4e175c-1229-4383-a8bb-a5d0b8e27172" dataset="cart_item.Item" active-filter-id="EMPTY_FILTER">
+      <filter id="7125d7be-1e61-4aef-8104-f978f9e22b0e" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="is not null" value="" active="true" />
       </filter>
     </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -43,20 +52,17 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="8713f9a3-8a63-46dc-a7dc-e638ee065267" active="true" signed="true">
+      <connection id="cc4e175c-1229-4383-a8bb-a5d0b8e27172" active="true" signed="true">
         <database>
-          <name value=" Connection" />
+          <name value="Connection" />
           <description value="" />
           <database-type value="MYSQL" />
-          <config-type value="BASIC" />
+          <config-type value="CUSTOM" />
           <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
-          <url-type value="DATABASE" />
-          <host value="localhost" />
-          <port value="3306" />
-          <database value="mysql" />
+          <url value="jdbc:mysql://localhost:3306/mysql" />
           <type value="USER_PASSWORD" />
           <user value="root" />
           <deprecated-pwd value="UEBzc3cwcmQ=" />

@@ -31,7 +31,6 @@ public class ItemService {
     public void insert(Item item){
         session.persist(item);
         transaction.commit();
-        session.close();
     }
 
     //UPDATE
@@ -42,15 +41,14 @@ public class ItemService {
         int result = query.executeUpdate();
         System.out.println("item Update Status= " + result);
         transaction.commit();
-        session.close();
+
     }
 
     //Delete
-    public void delete(){
-        Query query = session.createQuery("delete from Item where id=:id");
-        query.setParameter("id", 1);
+    public void delete(Item item){
+        Query query = session.createQuery("delete from Item where description=:description");
+        query.setParameter("description", item.getDescription());
         int result = query.executeUpdate();
         transaction.commit();
-        session.close();
     }
 }

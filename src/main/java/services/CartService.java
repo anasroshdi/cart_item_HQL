@@ -1,7 +1,6 @@
 package services;
 
 import model.Cart;
-import model.Item;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -24,7 +23,7 @@ public class CartService {
         Query query = session.createQuery("from Cart");
         List<Cart> cartList = query.list();
         for(Cart cart: cartList){
-            System.out.println("List of cart::"+cart.getId()+","+cart.getTotal()+ "," + cart.getItems());
+            System.out.println("List of cart:"+cart.getId()+","+cart.getTotal()+ "," + cart.getItems());
         }
     }
 
@@ -32,7 +31,6 @@ public class CartService {
     public void insert(Cart cart){
         session.persist(cart);
         transaction.commit();
-        session.close();
     }
 
     //UPDATE
@@ -46,9 +44,9 @@ public class CartService {
     }
 
     //Delete
-    public void delete(){
-        Query query = session.createQuery("delete from Cart where id=:id");
-        query.setParameter("id", 1);
+    public void delete(Cart cart){
+        Query query = session.createQuery("delete from Cart where total=:total");
+        query.setParameter("total", cart.getTotal());
         int result = query.executeUpdate();
         transaction.commit();
     }

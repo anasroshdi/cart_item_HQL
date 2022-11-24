@@ -30,29 +30,31 @@ public class Main {
         SessionFactory Factory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         Session session = Factory.openSession();
 
+        //ListOfItems and SetOfCart
+//        List<Item> itemList = new ArrayList<>();
+//        CartService cartService = new CartService(session);
+//
+//        //Setting cart object
+//        Cart cart = new Cart();
+//        cart.setTotal(50);
+//        cart.setItems(itemList);
+////        cartService.insert(cart);
+//        cartService.selectAll();
+//        cartService.delete(cart);
+
+
         Set<Cart> cartSet = new HashSet<>();
+        ItemService itemService = new ItemService(session);
+
 
         //Setting item object
         Item item = new Item();
         item.setPrice(14);
         item.setDescription("juice");
-        item.setCarts(cartSet);
-        ItemService itemService = new ItemService(session);
-
-        //ListOfItems and SetOfCart
-        List<Item> itemList = new ArrayList<>();
-        itemList.add(item);
-        itemService.insert(item);
-//        itemService.selectAll();
-
-
-
-//        CartService cartService = new CartService(session);
-        //Setting cart object
-//        Cart cart = new Cart();
-//        cart.setTotal(50);
-//        cart.setItems(itemList);
-//        cartService.insert(cart);
+        item.setCarts(cartSet);//
+//        itemService.insert(item);
+        itemService.selectAll();
+        itemService.delete(item);
 
     }
 
